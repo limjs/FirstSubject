@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SK 고용디딤돌 School</string>
+    <string name="text_main_sch">오늘의 나의 시간표</string>
+    <string name="text_main_notice">등록된 공지사항이 없습니다.</string>
+
+    <string name="title_activity_drawer">DrawerActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main_drawer">MainDrawerActivity</string>
+</resources>
