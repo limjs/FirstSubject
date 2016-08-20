@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
+import android.widget.Toast;
 
 import com.example.com.firstsubject.adapter.DrawerAdapter;
 import com.example.com.firstsubject.data.DrawerChild;
@@ -89,18 +90,39 @@ public class DrawerFragment extends Fragment {
                 int gid = (int) mAdapter.getGroupId(groupposition);
                 int cid = (int) mAdapter.getChildId(groupposition, childposition);
 
-                switch (gid) {
-                    case 3: {
-                        switch (cid) {
-                            case 1:
-                                Intent intent = new Intent(getActivity(), GalleryActivity.class);
-                                startActivity(intent);
-                                break;
-                            case 3:
-                                Intent intent2 = new Intent(getActivity(), SurveyActivity.class);
-                                startActivity(intent2);
-                                break;
-                        }
+                Intent intent;
+
+                if (gid == 1) {
+                    if (cid == 0) {
+                        intent = new Intent(getActivity(), NoticeActivity.class);
+                        startActivity(intent);
+                    } else if (cid == 1) {
+                        Toast.makeText(getActivity(), "시간표 클릭", Toast.LENGTH_SHORT).show();
+                        intent = new Intent(getActivity(), TimeTableActivity.class);
+                        startActivity(intent);
+                    } else if (cid == 2) {
+                        intent = new Intent(getActivity(), SurveyActivity.class);
+                        startActivity(intent);
+                    } else if (cid == 3) {
+                        Toast.makeText(getActivity(), "on-line과정 클릭", Toast.LENGTH_SHORT).show();
+                    }
+                } else if (gid == 2) {
+                    if (cid == 0) {
+                        Toast.makeText(getActivity(), "교육프로그램 클릭", Toast.LENGTH_SHORT).show();
+                    } else if (cid == 1) {
+                        Toast.makeText(getActivity(), "교육장소 클릭", Toast.LENGTH_SHORT).show();
+                    }
+                } else if (gid == 3) {
+                    if (cid == 0) {
+                        Toast.makeText(getActivity(), "자료실 클릭", Toast.LENGTH_SHORT).show();
+                    } else if (cid == 1) {
+                        intent = new Intent(getActivity(), GalleryActivity.class);
+                        startActivity(intent);
+                    } else if (cid == 2) {
+                        intent = new Intent(getActivity(), TeacherInfoActivity.class);
+                        startActivity(intent);
+                    } else if (cid == 3) {
+                        Toast.makeText(getActivity(), "설문조사 클릭", Toast.LENGTH_SHORT).show();
                     }
                 }
                 return true;

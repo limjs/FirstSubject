@@ -6,13 +6,13 @@
     android:fitsSystemWindows="true"
     tools:context="com.example.com.firstsubject.GalleryActivity">
 
-    <include layout="@layout/app_bar_toolbar" />
+    <include
+        android:id="@+id/gallery_toolbar"
+        layout="@layout/app_bar_toolbar" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_list_gallery"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true" />
+        android:layout_below="@id/gallery_toolbar" />
 </android.support.design.widget.CoordinatorLayout>

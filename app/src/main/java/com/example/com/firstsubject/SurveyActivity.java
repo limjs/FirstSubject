@@ -21,10 +21,8 @@ public class SurveyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_survey);
 
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
 
         listView = (RecyclerView) findViewById(R.id.rv_list_survey);
         mAdapter = new SurveyAdapter();

@@ -78,7 +78,7 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/text_lesson_title"
         android:layout_marginRight="10dp"
-        android:background="#ff7700"
+        android:background="@color/colorButton"
         android:text="  응답완료  "
         android:textColor="#ffffff" />
 

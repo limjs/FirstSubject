@@ -16,7 +16,7 @@ public class GalleryViewHolder extends RecyclerView.ViewHolder {
 
     public GalleryViewHolder(View itemView) {
         super(itemView);
-        nameView = (TextView) itemView.findViewById(R.id.text_name);
+        nameView = (TextView) itemView.findViewById(R.id.text_teacher_name);
         titleView = (TextView) itemView.findViewById(R.id.text_title);
         dateView = (TextView) itemView.findViewById(R.id.text_date);
         countView = (TextView) itemView.findViewById(R.id.text_gnum);

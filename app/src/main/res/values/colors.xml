@@ -5,5 +5,8 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorCategory">#FFFFE100</color>
     <color name="colorChild">#FFFDFDFD</color>
-    <color name="colorBackground">#FF494949</color>
+    <color name="colorBackground">#494949</color>
+    <color name="colorTextBox">#FF0000</color>
+    <color name="colorTextBoxContent">#fdfdfd</color>
+    <color name="colorButton">#ff7700</color>
 </resources>
