@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 
+import com.example.com.firstsubject.adapter.GalleryAdapter;
 import com.example.com.firstsubject.data.GalleryData;
 
 import java.util.ArrayList;
@@ -18,6 +20,10 @@ public class GalleryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
 
         listView = (RecyclerView) findViewById(R.id.rv_list_gallery);
         mAdapter = new GalleryAdapter();

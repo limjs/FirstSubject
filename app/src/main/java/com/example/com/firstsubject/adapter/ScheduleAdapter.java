@@ -1,11 +1,13 @@
-package com.example.com.firstsubject;
+package com.example.com.firstsubject.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.com.firstsubject.R;
 import com.example.com.firstsubject.data.ScheduleData;
+import com.example.com.firstsubject.view.ScheduleViewHolder;
 
 import java.util.List;
 

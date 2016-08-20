@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 
+import com.example.com.firstsubject.adapter.SurveyAdapter;
 import com.example.com.firstsubject.data.SurveyData;
 
 import java.util.ArrayList;
@@ -18,6 +20,11 @@ public class SurveyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_survey);
+
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
 
         listView = (RecyclerView) findViewById(R.id.rv_list_survey);
         mAdapter = new SurveyAdapter();

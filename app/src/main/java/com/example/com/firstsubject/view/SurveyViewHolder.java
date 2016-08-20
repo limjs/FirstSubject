@@ -1,9 +1,10 @@
-package com.example.com.firstsubject;
+package com.example.com.firstsubject.view;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.com.firstsubject.R;
 import com.example.com.firstsubject.data.SurveyData;
 
 /**

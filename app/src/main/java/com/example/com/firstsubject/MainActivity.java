@@ -2,18 +2,25 @@ package com.example.com.firstsubject;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.com.firstsubject.adapter.ScheduleAdapter;
 import com.example.com.firstsubject.data.ScheduleData;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    DrawerLayout drawerLayout;
 
     RecyclerView listView;
     ScheduleAdapter mAdapter;
@@ -23,6 +30,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(android.R.drawable.ic_dialog_map);
+
         //시간표 리사이클러 뷰//
         listView = (RecyclerView) findViewById(R.id.list_view);
         mAdapter = new ScheduleAdapter();
@@ -30,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         LinearLayoutManager manager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         listView.setLayoutManager(manager);
-        //시간표 리사이클러 뷰//
+
 
         //버튼 누르면 다른 액티비티로 이동//
         ImageButton imgbtn = (ImageButton) findViewById(R.id.imgbtn_gallery);
@@ -53,10 +67,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        //버튼 누르면 다른 액티비티로 이동//
-
         initData();
+    }
+
+    //Drawer 메뉴 열고 닫기
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == android.R.id.home) {
+            if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                drawerLayout.closeDrawer(GravityCompat.START);
+            } else {
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void initData() {
